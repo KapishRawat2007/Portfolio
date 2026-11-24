@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- Primary Meta Tags -->
+  <title>Kapish Rawat | BCA Student & Developer Portfolio</title>
+  <meta name="title" content="Kapish Rawat | BCA Student & Developer Portfolio" />
+  <meta name="description" content="Personal portfolio of Kapish Rawat, a BCA 1st-year student at Swami Rama Himalayan University, IEEE Member, and developer skilled in Python, C/C++, Web, and Unity." />
+  <meta name="keywords" content="Kapish Rawat, Portfolio, BCA Student, Swami Rama Himalayan University, Python Developer, Unity Game Dev, Web Development, IEEE Member, GitHub Club" />
+  <meta name="author" content="Kapish Rawat" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0b14" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kapishrawat.dev/" />
+  <meta property="og:title" content="Kapish Rawat | BCA Student & Developer Portfolio" />
+  <meta property="og:description" content="Discover projects, technical skills, and community work by Kapish Rawat — 1st-year BCA student at Swami Rama Himalayan University." />
+  <meta property="og:image" content="assets/images/profile-placeholder.svg" />
+  <meta property="og:site_name" content="Kapish Rawat Portfolio" />
+
+  <!-- Twitter Card -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://kapishrawat.dev/" />
+  <meta property="twitter:title" content="Kapish Rawat | BCA Student & Developer Portfolio" />
+  <meta property="twitter:description" content="Explore projects, skills, and community activities of Kapish Rawat — BCA 1st-year student at SRHU." />
+  <meta property="twitter:image" content="assets/images/profile-placeholder.svg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+
+  <!-- Google Fonts: Poppins (Headings), Inter (Body), JetBrains Mono (Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Animation & Icon Stylesheets (AOS & FontAwesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9kcZj5fzDDhAjSkUWDtxPbwtPEgML797Z+2Wq35r89B1/32ZkAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- JSON-LD Structured Data for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kapish Rawat",
+    "jobTitle": "Student & Junior Developer",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Swami Rama Himalayan University"
+    },
+    "description": "BCA 1st-year student at Swami Rama Himalayan University, passionate about Python, Web Development, C/C++, and Unity Game Dev.",
+    "knowsAbout": ["HTML", "CSS", "Python", "C", "C++", "Unity", "MySQL", "Git", "GitHub"],
+    "memberOf": [
+      {
+        "@type": "Organization",
+        "name": "IEEE Student Branch, Swami Rama Himalayan University"
+      },
+      {
+        "@type": "Organization",
+        "name": "GitHub Campus Club, Swami Rama Himalayan University"
+      }
+    ],
+    "url": "https://kapishrawat.dev/"
+  }
+  </script>
+</head>
+<body>
+  <!-- ================================================================= -->
+  <!-- 1. PRELOADER                                                      -->
+  <!-- ================================================================= -->
+  <div id="preloader" class="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <svg viewBox="0 0 100 100" class="preloader__svg" width="90" height="90">
+          <circle cx="50" cy="50" r="44" class="preloader__ring-bg" />
+          <circle cx="50" cy="50" r="44" class="preloader__ring-progress" id="preloader-progress" />
+          <text x="50" y="58" class="preloader__initials">KR</text>
+        </svg>
+      </div>
+      <div class="preloader__text">Loading portfolio...</div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- CUSTOM CURSOR (Hidden on touch devices & reduced motion)          -->
+  <!-- ================================================================= -->
+  <div id="custom-cursor" class="custom-cursor" aria-hidden="true"></div>
+  <div id="custom-cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
+
+  <!-- ================================================================= -->
+  <!-- SCROLL PROGRESS BAR                                               -->
+  <!-- ================================================================= -->
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ================================================================= -->
+  <!-- 2. NAVBAR                                                         -->
+  <!-- ================================================================= -->
+  <header class="header" id="header">
+    <nav class="navbar container" id="navbar" aria-label="Main Navigation">
+      <a href="#home" class="navbar__logo" aria-label="Kapish Rawat Home">
+        <span class="navbar__logo-bracket">&lt;</span>
+        <span class="navbar__logo-text">Kapish<span class="gradient-text">.dev</span></span>
+        <span class="navbar__logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="navbar__menu" id="navbar-menu" role="menubar">
+        <li role="none"><a href="#home" class="navbar__link active" role="menuitem">Home</a></li>
+        <li role="none"><a href="#about" class="navbar__link" role="menuitem">About</a></li>
+        <li role="none"><a href="#skills" class="navbar__link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#projects" class="navbar__link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#community" class="navbar__link" role="menuitem">Community</a></li>
+        <li role="none"><a href="#education" class="navbar__link" role="menuitem">Education</a></li>
+        <li role="none"><a href="#contact" class="navbar__link" role="menuitem">Contact</a></li>
+      </ul>
+
+      <!-- Action Buttons: Theme Toggle & Mobile Hamburger -->
+      <div class="navbar__actions">
+        <!-- Theme Toggle Button -->
+        <button id="theme-toggle" class="btn-icon theme-toggle" aria-label="Toggle light and dark theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-toggle__icon-moon" aria-hidden="true"></i>
+          <i class="fa-solid fa-sun theme-toggle__icon-sun" aria-hidden="true"></i>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="nav-toggle" class="btn-icon nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navbar-menu">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ================================================================= -->
+  <!-- MAIN CONTENT SECTIONS                                             -->
+  <!-- ================================================================= -->
+  <main id="main-content">
+
+    <!-- =============================================================== -->
+    <!-- 3. HERO SECTION                                                 -->
+    <!-- =============================================================== -->
+    <section id="home" class="hero section" aria-label="Introduction">
+      <!-- Interactive tsParticles canvas container -->
+      <div id="tsparticles" class="hero__particles" aria-hidden="true"></div>
+
+      <div class="container hero__container">
+        <!-- Hero Content Column -->
+        <div class="hero__content">
+          <div class="hero__badge" data-aos="fade-down" data-aos-delay="100">
+            <span class="hero__badge-dot"></span>
+            <span>BCA 1st Year &bull; Swami Rama Himalayan University</span>
+          </div>
+
+          <h1 class="hero__title" data-aos="fade-up" data-aos-delay="200">
+            Hi, I'm <br />
+            <span class="gradient-text hero__name">Kapish Rawat</span>
+          </h1>
+
+          <!-- Typed.js Role Rotator -->
+          <div class="hero__roles-wrapper" data-aos="fade-up" data-aos-delay="300">
+            <span class="hero__roles-label">I am a </span>
+            <span id="typed-roles" class="hero__roles-typed"></span>
+          </div>
+
+          <p class="hero__tagline" data-aos="fade-up" data-aos-delay="400">
+            Curious beginner programmer with a passion for building clean code, exploring game mechanics in Unity, and learning fundamental computer science principles.
+          </p>
+
+          <!-- Call to Action Buttons -->
+          <div class="hero__cta-group" data-aos="fade-up" data-aos-delay="500">
+            <a href="#projects" class="btn btn--primary magnetic-btn">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="assets/resume.pdf" class="btn btn--outline magnetic-btn" id="hero-resume-btn" download="Kapish_Rawat_Resume.pdf" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+              <span>Download Resume</span>
+            </a>
+          </div>
+
+          <!-- Social Icons Row (Populated with profile.json placeholders) -->
+          <div class="hero__socials" data-aos="fade-up" data-aos-delay="600" id="hero-socials">
+            <!-- Will be dynamically bound / enhanced by main.js -->
+            <a href="#" class="social-link disabled" data-platform="github" aria-label="GitHub Profile" title="GitHub (Coming soon)">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link disabled" data-platform="linkedin" aria-label="LinkedIn Profile" title="LinkedIn (Coming soon)">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link disabled" data-platform="instagram" aria-label="Instagram Profile" title="Instagram (Coming soon)">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="social-link disabled" data-platform="twitter" aria-label="X / Twitter Profile" title="X (Twitter) (Coming soon)">
+              <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="#contact" class="social-link" data-platform="email" aria-label="Email Kapish" title="Send an Email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Visual: 3D Tilt Card with Code Snippet / Tech Badge -->
+        <div class="hero__visual" data-aos="zoom-in" data-aos-delay="400">
+          <div class="code-card tilt-card" data-tilt data-tilt-max="12" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2">
+            <div class="code-card__header">
+              <div class="code-card__dots">
+                <span class="dot dot--red"></span>
+                <span class="dot dot--yellow"></span>
+                <span class="dot dot--green"></span>
+              </div>
+              <div class="code-card__title">kapish_profile.py</div>
+              <div class="code-card__lang">Python</div>
+            </div>
+            <div class="code-card__body">
+              <pre><code><span class="token-comment"># Developer & Student profile</span>
+<span class="token-keyword">class</span> <span class="token-class">Developer</span>:
+    <span class="token-keyword">def</span> <span class="token-function">__init__</span>(<span class="token-self">self</span>):
+        <span class="token-self">self</span>.name = <span class="token-string">"Kapish Rawat"</span>
+        <span class="token-self">self</span>.degree = <span class="token-string">"BCA (1st Year)"</span>
+        <span class="token-self">self</span>.university = <span class="token-string">"Swami Rama Himalayan Univ."</span>
+        <span class="token-self">self</span>.clubs = [<span class="token-string">"IEEE"</span>, <span class="token-string">"GitHub Club"</span>]
+        <span class="token-self">self</span>.skills = [
+            <span class="token-string">"Python"</span>, <span class="token-string">"C/C++"</span>,
+            <span class="token-string">"Web"</span>, <span class="token-string">"Unity"</span>, <span class="token-string">"MySQL"</span>
+        ]
+
+    <span class="token-keyword">def</span> <span class="token-function">current_mission</span>(<span class="token-self">self</span>):
+        <span class="token-keyword">return</span> <span class="token-string">"Learning, coding &amp; collaborating!"</span>
+
+kapish = Developer()
+<span class="token-function">print</span>(kapish.current_mission())</code></pre>
+            </div>
+            <div class="code-card__footer">
+              <span class="pulse-indicator"></span>
+              <span>Available for internships &amp; learning projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Indicator -->
+      <a href="#about" class="hero__scroll-indicator" aria-label="Scroll down to About section">
+        <span class="mouse">
+          <span class="wheel"></span>
+        </span>
+        <span class="arrow-down">
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </span>
+      </a>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 4. ABOUT SECTION                                                -->
+    <!-- =============================================================== -->
+    <section id="about" class="about section" aria-label="About Kapish Rawat">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">Who I Am</span>
+          <h2 class="section-header__title">About <span class="gradient-text">Me</span></h2>
+          <div class="section-header__line"></div>
+        </div>
+
+        <div class="about__grid">
+          <!-- Profile Visual with Glass Border & Floating Badges -->
+          <div class="about__visual" data-aos="fade-right" data-aos-delay="200">
+            <div class="about__image-wrapper tilt-card" data-tilt data-tilt-max="8">
+              <picture>
+                <source srcset="assets/images/profile-placeholder.svg" type="image/svg+xml" />
+                <img src="assets/images/profile.webp" alt="Kapish Rawat - BCA Student and Developer" class="about__image" id="about-profile-img" loading="lazy" onerror="this.onerror=null; this.src='assets/images/profile-placeholder.svg';" />
+              </picture>
+              <div class="about__image-glow"></div>
+            </div>
+
+            <!-- Floating Badge 1 -->
+            <div class="floating-badge floating-badge--top">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+              <span>BCA 1st Year @ SRHU</span>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-badge floating-badge--bottom">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <span>Curious Problem Solver</span>
+            </div>
+          </div>
+
+          <!-- About Biography & Statistics -->
+          <div class="about__content" data-aos="fade-left" data-aos-delay="300">
+            <h3 class="about__heading">
+              A passionate learner building strong roots in computer applications.
+            </h3>
+            <p class="about__text" id="about-bio">
+              I am a first-year Bachelor of Computer Applications (BCA) student at <strong>Swami Rama Himalayan University</strong> with a deep curiosity for software development, game programming, and computer science fundamentals.
+            </p>
+            <p class="about__text">
+              My journey began with writing algorithmic scripts in Python and C, creating interactive experiences in Unity, and crafting accessible front-end interfaces. I believe in learning by doing, writing readable code, and actively collaborating within university tech circles.
+            </p>
+            <p class="about__text">
+              As an active member of the <strong>IEEE Student Branch</strong> and the <strong>GitHub Campus Club</strong> at SRHU, I continually engage with workshops, hackathons, and open-source practices to expand my technical horizon.
+            </p>
+
+            <!-- Quick Info Grid -->
+            <div class="about__details-grid">
+              <div class="about__detail-item">
+                <span class="detail-label"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location:</span>
+                <span class="detail-value">Dehradun, Uttarakhand, India</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="detail-label"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> University:</span>
+                <span class="detail-value">Swami Rama Himalayan Univ.</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="detail-label"><i class="fa-solid fa-book-open" aria-hidden="true"></i> Degree:</span>
+                <span class="detail-value">BCA (First Year)</span>
+              </div>
+              <div class="about__detail-item">
+                <span class="detail-label"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Status:</span>
+                <span class="detail-value status-badge"><span class="status-dot"></span> Open to Collaborations</span>
+              </div>
+            </div>
+
+            <!-- Animated Stat Counters -->
+            <div class="about__counters" id="about-counters">
+              <div class="counter-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="counter-card__icon"><i class="fa-solid fa-code" aria-hidden="true"></i></div>
+                <div class="counter-card__number" data-target="5">0</div>
+                <div class="counter-card__label">Languages Explored</div>
+              </div>
+
+              <div class="counter-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="counter-card__icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></div>
+                <div class="counter-card__number" data-target="4">0</div>
+                <div class="counter-card__label">Practice Projects</div>
+              </div>
+
+              <div class="counter-card" data-aos="zoom-in" data-aos-delay="300">
+                <div class="counter-card__icon"><i class="fa-solid fa-users" aria-hidden="true"></i></div>
+                <div class="counter-card__number" data-target="2">0</div>
+                <div class="counter-card__label">Clubs &amp; Chapters</div>
+              </div>
+
+              <div class="counter-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="counter-card__icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+                <div class="counter-card__number" data-target="1">0</div>
+                <div class="counter-card__label">Year of BCA Journey</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 5. SKILLS SECTION                                               -->
+    <!-- =============================================================== -->
+    <section id="skills" class="skills section" aria-label="Technical Skills">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">Technical Toolkit</span>
+          <h2 class="section-header__title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+          <div class="section-header__line"></div>
+          <p class="section-header__desc">
+            Honest competency levels reflecting my active learning path as a 1st-year computer applications student.
+          </p>
+        </div>
+
+        <div class="skills__grid">
+          <!-- Skill Category 1: Languages -->
+          <div class="skill-category-card glass-card tilt-card" data-aos="fade-up" data-aos-delay="100" data-tilt data-tilt-max="5">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+              </div>
+              <h3 class="skill-category-card__title">Programming Languages</h3>
+            </div>
+            <div class="skill-list">
+              <!-- Python -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-python" aria-hidden="true"></i> Python</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="70%"></div>
+                </div>
+              </div>
+
+              <!-- C -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-solid fa-c" aria-hidden="true"></i> C Language</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="65%"></div>
+                </div>
+              </div>
+
+              <!-- C++ -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-solid fa-code" aria-hidden="true"></i> C++ (OOP Basics)</span>
+                  <span class="skill-item__level badge badge--beginner">Beginner</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 2: Web Development -->
+          <div class="skill-category-card glass-card tilt-card" data-aos="fade-up" data-aos-delay="200" data-tilt data-tilt-max="5">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-globe" aria-hidden="true"></i>
+              </div>
+              <h3 class="skill-category-card__title">Web Development</h3>
+            </div>
+            <div class="skill-list">
+              <!-- HTML5 -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5 (Semantic)</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="75%"></div>
+                </div>
+              </div>
+
+              <!-- CSS3 -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3 (Flexbox/Grid)</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="70%"></div>
+                </div>
+              </div>
+
+              <!-- JavaScript Fundamentals -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript (DOM / ES6)</span>
+                  <span class="skill-item__level badge badge--beginner">Beginner</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="55%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 3: Game Dev & Database -->
+          <div class="skill-category-card glass-card tilt-card" data-aos="fade-up" data-aos-delay="300" data-tilt data-tilt-max="5">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+              </div>
+              <h3 class="skill-category-card__title">Game Dev &amp; Databases</h3>
+            </div>
+            <div class="skill-list">
+              <!-- Unity -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-unity" aria-hidden="true"></i> Unity Engine</span>
+                  <span class="skill-item__level badge badge--beginner">Beginner</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="45%"></div>
+                </div>
+              </div>
+
+              <!-- MySQL -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-solid fa-database" aria-hidden="true"></i> MySQL (Relational DB)</span>
+                  <span class="skill-item__level badge badge--beginner">Beginner</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="50%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill Category 4: Tools & Version Control -->
+          <div class="skill-category-card glass-card tilt-card" data-aos="fade-up" data-aos-delay="400" data-tilt data-tilt-max="5">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-toolbox" aria-hidden="true"></i>
+              </div>
+              <h3 class="skill-category-card__title">Tools &amp; Version Control</h3>
+            </div>
+            <div class="skill-list">
+              <!-- Git -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git (CLI &amp; Workflows)</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="65%"></div>
+                </div>
+              </div>
+
+              <!-- GitHub -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub (Collab &amp; Repos)</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="65%"></div>
+                </div>
+              </div>
+
+              <!-- VS Code & Shell -->
+              <div class="skill-item">
+                <div class="skill-item__info">
+                  <span class="skill-item__name"><i class="fa-solid fa-code-branch" aria-hidden="true"></i> VS Code &amp; Terminal</span>
+                  <span class="skill-item__level badge badge--intermediate">Intermediate</span>
+                </div>
+                <div class="skill-item__bar-bg" aria-hidden="true">
+                  <div class="skill-item__bar-fill" data-progress="70%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 6. PROJECTS SECTION                                             -->
+    <!-- =============================================================== -->
+    <section id="projects" class="projects section" aria-label="Projects">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">My Creations</span>
+          <h2 class="section-header__title">Featured <span class="gradient-text">Projects</span></h2>
+          <div class="section-header__line"></div>
+          <p class="section-header__desc">
+            Explore practical implementations across Python, Web, C/C++, and Unity. Placeholder slots ready for live repository links.
+          </p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="projects__filters" data-aos="fade-up" data-aos-delay="100" role="tablist" aria-label="Filter projects by category">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="filter-btn" data-filter="Web" role="tab" aria-selected="false">Web</button>
+          <button class="filter-btn" data-filter="Python" role="tab" aria-selected="false">Python</button>
+          <button class="filter-btn" data-filter="C/C++" role="tab" aria-selected="false">C / C++</button>
+          <button class="filter-btn" data-filter="Unity" role="tab" aria-selected="false">Unity</button>
+        </div>
+
+        <!-- Dynamic Projects Grid (Populated from data/projects.json) -->
+        <div class="projects__grid" id="projects-grid">
+          <!-- Fallback project cards will be loaded and replaced or hydrated by JS -->
+          <noscript>
+            <div class="project-card glass-card">
+              <div class="project-card__body">
+                <h3>[Project 1: Python CLI Tool]</h3>
+                <p>Python script/automation tool demonstrating core logic and file I/O.</p>
+                <div class="project-card__tags"><span class="tag">Python</span></div>
+              </div>
+            </div>
+          </noscript>
+        </div>
+
+        <!-- Notice Box regarding placeholders -->
+        <div class="projects__notice glass-card" data-aos="fade-up">
+          <div class="notice-icon"><i class="fa-solid fa-circle-info" aria-hidden="true"></i></div>
+          <div class="notice-text">
+            <strong>Honest Student Portfolio:</strong> The project titles and descriptions above are structured templates representing my current coursework and learning milestones. As new repositories are published on GitHub, they update via <code>data/projects.json</code>.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 7. COMMUNITY & INVOLVEMENT SECTION                              -->
+    <!-- =============================================================== -->
+    <section id="community" class="community section" aria-label="Community Memberships & Activities">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">Clubs &amp; Collaboration</span>
+          <h2 class="section-header__title">Community &amp; <span class="gradient-text">Involvement</span></h2>
+          <div class="section-header__line"></div>
+          <p class="section-header__desc">
+            Active memberships and collegiate developer chapter engagements at Swami Rama Himalayan University.
+          </p>
+        </div>
+
+        <!-- Community Membership Cards -->
+        <div class="community__cards-grid">
+          <!-- Card 1: IEEE Member -->
+          <div class="community-card glass-card tilt-card" data-aos="fade-right" data-aos-delay="100" data-tilt data-tilt-max="8">
+            <div class="community-card__header">
+              <div class="community-card__badge-icon ieee-badge">
+                <i class="fa-solid fa-atom" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span class="community-card__tag">Technical Society</span>
+                <h3 class="community-card__title">IEEE Student Member</h3>
+              </div>
+            </div>
+            <div class="community-card__org">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <span>Swami Rama Himalayan University Student Branch</span>
+            </div>
+            <p class="community-card__desc">
+              Proud member of the world's largest technical professional organization. Participating in technical webinars, engineering workshops, and collaborative knowledge-sharing sessions organized at university and regional levels.
+            </p>
+            <div class="community-card__pills">
+              <span class="pill">Tech Seminars</span>
+              <span class="pill">Workshops</span>
+              <span class="pill">Networking</span>
+            </div>
+          </div>
+
+          <!-- Card 2: GitHub Club Member -->
+          <div class="community-card glass-card tilt-card" data-aos="fade-left" data-aos-delay="200" data-tilt data-tilt-max="8">
+            <div class="community-card__header">
+              <div class="community-card__badge-icon github-club-badge">
+                <i class="fa-brands fa-github-alt" aria-hidden="true"></i>
+              </div>
+              <div>
+                <span class="community-card__tag">Developer Community</span>
+                <h3 class="community-card__title">GitHub Club Member</h3>
+              </div>
+            </div>
+            <div class="community-card__org">
+              <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+              <span>GitHub Campus Club &bull; SRHU</span>
+            </div>
+            <p class="community-card__desc">
+              Actively exploring version control workflows, open-source best practices, and collaborative coding meetups. Partnering with fellow campus developers to build software culture and share Git learning resources.
+            </p>
+            <div class="community-card__pills">
+              <span class="pill">Git Best Practices</span>
+              <span class="pill">Open Source</span>
+              <span class="pill">Hackathons</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community & Activities Timeline / Milestones -->
+        <div class="community__timeline-wrapper" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="timeline-heading">
+            <i class="fa-solid fa-calendar-days" aria-hidden="true"></i> Campus Activities &amp; Learning Milestones
+          </h3>
+          <div class="timeline">
+            <!-- Timeline Item 1 -->
+            <div class="timeline__item" data-aos="fade-up">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content glass-card">
+                <div class="timeline__meta">
+                  <span class="timeline__date">2024 &bull; BCA 1st Year</span>
+                  <span class="timeline__badge">Campus Club</span>
+                </div>
+                <h4 class="timeline__title">Induction into GitHub Club &amp; IEEE Student Chapter</h4>
+                <p class="timeline__desc">
+                  Joined university technical communities at Swami Rama Himalayan University to collaborate with peers, participate in technical discussions, and contribute to campus coding activities.
+                </p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 (Placeholder Milestone) -->
+            <div class="timeline__item" data-aos="fade-up" data-aos-delay="100">
+              <div class="timeline__dot"></div>
+              <div class="timeline__content glass-card">
+                <div class="timeline__meta">
+                  <span class="timeline__date">[Upcoming / Planned]</span>
+                  <span class="timeline__badge timeline__badge--future">Goal</span>
+                </div>
+                <h4 class="timeline__title">[First Campus Hackathon &amp; Technical Workshop]</h4>
+                <p class="timeline__desc">
+                  Preparing to participate in inter-college hackathons and hands-on workshops focusing on software engineering, game jams, and open-source contributions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 8. EDUCATION SECTION                                            -->
+    <!-- =============================================================== -->
+    <section id="education" class="education section" aria-label="Education History">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">Academic Background</span>
+          <h2 class="section-header__title">My <span class="gradient-text">Education</span></h2>
+          <div class="section-header__line"></div>
+          <p class="section-header__desc">
+            Formal academic journey building strong theoretical foundations in computing sciences.
+          </p>
+        </div>
+
+        <div class="education__timeline" id="education-timeline">
+          <!-- Degree 1: BCA Current -->
+          <div class="edu-card glass-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="edu-card__icon">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+            <div class="edu-card__body">
+              <div class="edu-card__header">
+                <span class="edu-card__period">2024 &ndash; Present (1st Year)</span>
+                <span class="badge badge--current">Currently Enrolled</span>
+              </div>
+              <h3 class="edu-card__degree">Bachelor of Computer Applications (BCA)</h3>
+              <h4 class="edu-card__institution">
+                <i class="fa-solid fa-university" aria-hidden="true"></i>
+                Swami Rama Himalayan University (SRHU), Dehradun
+              </h4>
+              <p class="edu-card__description">
+                Currently pursuing first-year curriculum encompassing fundamental Computer Science principles, C/C++ programming languages, Discrete Mathematics, Database Systems, and Web Technologies.
+              </p>
+              <div class="edu-card__highlights">
+                <span><i class="fa-solid fa-check" aria-hidden="true"></i> Core Programming &amp; Logic</span>
+                <span><i class="fa-solid fa-check" aria-hidden="true"></i> Computer Systems Architecture</span>
+                <span><i class="fa-solid fa-check" aria-hidden="true"></i> Active Tech Club Member</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Degree 2: Schooling Placeholder -->
+          <div class="edu-card glass-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="edu-card__icon edu-card__icon--secondary">
+              <i class="fa-solid fa-school" aria-hidden="true"></i>
+            </div>
+            <div class="edu-card__body">
+              <div class="edu-card__header">
+                <span class="edu-card__period">[Passing Year, e.g., 2024]</span>
+                <span class="badge badge--completed">Completed</span>
+              </div>
+              <h3 class="edu-card__degree">Higher Secondary Education (12th Grade)</h3>
+              <h4 class="edu-card__institution">
+                <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+                [Your School / College Name, City]
+              </h4>
+              <p class="edu-card__description">
+                Completed secondary schooling with academic focus in Science and Mathematics, laying the conceptual groundwork for analytical problem-solving and software development.
+              </p>
+              <div class="edu-card__highlights">
+                <span><i class="fa-solid fa-check" aria-hidden="true"></i> Mathematics &amp; Science</span>
+                <span><i class="fa-solid fa-check" aria-hidden="true"></i> Foundational Computer Studies</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================================================== -->
+    <!-- 9. CONTACT SECTION                                              -->
+    <!-- =============================================================== -->
+    <section id="contact" class="contact section" aria-label="Contact Information and Form">
+      <div class="container">
+        <!-- Section Header -->
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-header__subtitle">Get In Touch</span>
+          <h2 class="section-header__title">Let's <span class="gradient-text">Connect</span></h2>
+          <div class="section-header__line"></div>
+          <p class="section-header__desc">
+            Have an internship opportunity, a project to collaborate on, or just want to chat about tech? Drop a message!
+          </p>
+        </div>
+
+        <div class="contact__grid">
+          <!-- Left Column: Contact Details & Social Links -->
+          <div class="contact__info glass-card" data-aos="fade-right" data-aos-delay="100">
+            <h3 class="contact__info-title">Reach Out Directly</h3>
+            <p class="contact__info-desc">
+              Feel free to send a message using the form or connect through any of my social profiles. I strive to respond promptly to all academic and developer inquiries.
+            </p>
+
+            <div class="contact__methods">
+              <div class="contact-method-item">
+                <div class="contact-method-item__icon">
+                  <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                </div>
+                <div class="contact-method-item__content">
+                  <span class="contact-method-item__label">Email</span>
+                  <a href="mailto:kapishrawat.placeholder@example.com" class="contact-method-item__value" id="contact-email-link">
+                    [Click to Email / Replace in profile.json]
+                  </a>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-method-item__icon">
+                  <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                </div>
+                <div class="contact-method-item__content">
+                  <span class="contact-method-item__label">Location</span>
+                  <span class="contact-method-item__value">Dehradun, Uttarakhand, India</span>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-method-item__icon">
+                  <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="contact-method-item__content">
+                  <span class="contact-method-item__label">Campus</span>
+                  <span class="contact-method-item__value">Swami Rama Himalayan University</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links in Contact Card -->
+            <div class="contact__socials-wrapper">
+              <h4 class="contact__socials-heading">Follow &amp; Connect</h4>
+              <div class="contact__socials-list" id="contact-socials">
+                <a href="#" class="social-link disabled" data-platform="github" aria-label="GitHub Profile" title="GitHub (Coming soon)">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link disabled" data-platform="linkedin" aria-label="LinkedIn Profile" title="LinkedIn (Coming soon)">
+                  <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link disabled" data-platform="instagram" aria-label="Instagram Profile" title="Instagram (Coming soon)">
+                  <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" class="social-link disabled" data-platform="twitter" aria-label="X / Twitter Profile" title="X (Twitter) (Coming soon)">
+                  <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact__form-wrapper glass-card" data-aos="fade-left" data-aos-delay="200">
+            <h3 class="contact__form-title">Send a Message</h3>
+            <form id="contact-form" class="contact-form" novalidate>
+              <!-- Name Input Field -->
+              <div class="form-group">
+                <label for="name" class="form-label">
+                  Your Name <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-user input-icon" aria-hidden="true"></i>
+                  <input type="text" id="name" name="name" class="form-input" placeholder="e.g. John Doe" required minlength="2" maxlength="60" autocomplete="name" />
+                </div>
+                <span class="form-error" id="name-error" role="alert"></span>
+              </div>
+
+              <!-- Email Input Field -->
+              <div class="form-group">
+                <label for="email" class="form-label">
+                  Your Email <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper">
+                  <i class="fa-solid fa-envelope input-icon" aria-hidden="true"></i>
+                  <input type="email" id="email" name="email" class="form-input" placeholder="e.g. john@example.com" required autocomplete="email" />
+                </div>
+                <span class="form-error" id="email-error" role="alert"></span>
+              </div>
+
+              <!-- Message Textarea Field -->
+              <div class="form-group">
+                <label for="message" class="form-label">
+                  Your Message <span class="required" aria-hidden="true">*</span>
+                </label>
+                <div class="input-wrapper input-wrapper--textarea">
+                  <i class="fa-solid fa-message input-icon" aria-hidden="true"></i>
+                  <textarea id="message" name="message" class="form-input form-textarea" rows="5" placeholder="Hi Kapish, I'd like to connect regarding..." required minlength="10" maxlength="2000"></textarea>
+                </div>
+                <span class="form-error" id="message-error" role="alert"></span>
+              </div>
+
+              <!-- Submit Button with Magnetic Effect -->
+              <button type="submit" id="contact-submit-btn" class="btn btn--primary btn--full magnetic-btn">
+                <span class="btn__text">Send Message</span>
+                <i class="fa-solid fa-paper-plane btn__icon" aria-hidden="true"></i>
+                <span class="btn__spinner" aria-hidden="true"></span>
+              </button>
+            </form>
+
+            <!-- Status Notice -->
+            <div class="form-footer-note">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              <span>Direct Flask API delivery with automatic <code>mailto:</code> fallback. Your data is never shared.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- 10. FOOTER                                                        -->
+  <!-- ================================================================= -->
+  <footer class="footer">
+    <div class="container footer__container">
+      <div class="footer__brand">
+        <a href="#home" class="footer__logo">
+          <span class="navbar__logo-bracket">&lt;</span>
+          <span>Kapish<span class="gradient-text">.dev</span></span>
+          <span class="navbar__logo-bracket">/&gt;</span>
+        </a>
+        <p class="footer__tagline">
+          BCA 1st Year &bull; Swami Rama Himalayan University &bull; IEEE &amp; GitHub Club Member
+        </p>
+      </div>
+
+      <div class="footer__links">
+        <h4 class="footer__title">Navigation</h4>
+        <ul class="footer__nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#community">Community</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__socials-section">
+        <h4 class="footer__title">Connect</h4>
+        <div class="footer__socials" id="footer-socials">
+          <a href="#" class="social-link disabled" data-platform="github" aria-label="GitHub" title="GitHub (Coming soon)"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+          <a href="#" class="social-link disabled" data-platform="linkedin" aria-label="LinkedIn" title="LinkedIn (Coming soon)"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" class="social-link disabled" data-platform="instagram" aria-label="Instagram" title="Instagram (Coming soon)"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" class="social-link disabled" data-platform="twitter" aria-label="X / Twitter" title="X (Twitter) (Coming soon)"><i class="fa-brands fa-x-twitter" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> Kapish Rawat. Built with HTML, CSS, JavaScript &amp; Flask.
+        </p>
+        <p class="footer__crafted">
+          Crafted with passion for learning &amp; technology.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================================= -->
+  <!-- BACK TO TOP BUTTON                                                -->
+  <!-- ================================================================= -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+
+  <!-- ================================================================= -->
+  <!-- TOAST NOTIFICATION CONTAINER                                      -->
+  <!-- ================================================================= -->
+  <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- ================================================================= -->
+  <!-- SCRIPTS & VENDOR LIBRARIES (CDNs)                                 -->
+  <!-- ================================================================= -->
+  <!-- 1. GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9gPcnHzkFoRtFTjmBw3MUcvLG804249+KUgzygcmEcTHYI34PBlypungGYgMmMrBM4ykSmFy9Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- 2. tsParticles (@tsparticles/engine & @tsparticles/slim) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/engine@3.8.1/tsparticles.engine.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/slim@3.8.1/tsparticles.slim.min.js"></script>
+
+  <!-- 3. Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+  <!-- 4. Vanilla-Tilt -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjX5ST98UIR/VDCHSnPtxgkIB545L4RIfh69S+ZJ8U53vK2vK1N/6nBfV1Vn+j1n5nJ0/W1/oYkYw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- 5. AOS (Animate on Scroll) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- Modular Portfolio JavaScript -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
+

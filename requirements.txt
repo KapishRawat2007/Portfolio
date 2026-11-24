@@ -1,0 +1,15 @@
+# Python dependencies for the portfolio's optional Flask backend (contact form)
+# Install with: pip install -r requirements.txt
+# Python 3.10+ recommended
+
+Flask>=3.0.0,<4.0.0
+Flask-Cors>=4.0.0
+Flask-Mail>=0.9.1
+Flask-Limiter>=3.5.0
+python-dotenv>=1.0.0
+email-validator>=2.1.0
+gunicorn>=21.2.0
+
+# Frontend libraries (GSAP, ScrollTrigger, tsParticles, Typed.js,
+# Vanilla-Tilt, AOS) are loaded via CDN, so no npm install is needed.
+

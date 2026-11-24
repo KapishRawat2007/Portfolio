@@ -1,0 +1,6 @@
+[2026-11-24T06:11:30.546618] FROM: Recruiter Test (recruiter@example.com)
+MESSAGE: Hello Kapish, great portfolio project!
+------------------------------------------------------------
+[2026-11-24T06:13:30.907501] FROM: Visitor Live Test (visitor.test@example.com)
+MESSAGE: Testing message from live HTTP client to ensure complete integration.
+------------------------------------------------------------

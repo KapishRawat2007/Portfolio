@@ -1,0 +1,55 @@
+{
+  "name": "Kapish Rawat",
+  "title": "BCA 1st-Year Student",
+  "institution": "Swami Rama Himalayan University",
+  "tagline": "BCA student building things with code.",
+  "bio": "I am a first-year Bachelor of Computer Applications (BCA) student at Swami Rama Himalayan University with a deep curiosity for software development, game programming, and computer science fundamentals. Eager to explore new technologies, collaborate with passionate peers, and create clean, impactful digital experiences.",
+  "email": "YOUR_EMAIL",
+  "resume": "assets/resume.pdf",
+  "photo": "assets/images/profile.webp",
+  "socials": {
+    "github": "YOUR_GITHUB_URL",
+    "linkedin": "YOUR_LINKEDIN_URL",
+    "instagram": "YOUR_INSTAGRAM_URL",
+    "twitter": "YOUR_X_URL"
+  },
+  "stats": {
+    "languages": 5,
+    "projects": 4,
+    "communities": 2,
+    "yearsLearning": 1
+  },
+  "memberships": [
+    {
+      "role": "IEEE Student Member",
+      "organization": "Swami Rama Himalayan University",
+      "badge": "IEEE",
+      "description": "Engaged with the global technical community, learning through workshops, technology seminars, and collaborative technical sessions.",
+      "link": ""
+    },
+    {
+      "role": "GitHub Club Member",
+      "organization": "Swami Rama Himalayan University",
+      "badge": "GitHub Club",
+      "description": "Active participant in open-source exploration, version control best practices, and developer meetups at the university.",
+      "link": ""
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Computer Applications (BCA)",
+      "institution": "Swami Rama Himalayan University",
+      "year": "2024 - Present (1st Year)",
+      "description": "Focusing on programming paradigms, computer fundamentals, mathematics, and web technologies.",
+      "current": true
+    },
+    {
+      "degree": "Higher Secondary Education (12th Grade)",
+      "institution": "[Your School / College Name]",
+      "year": "[Passing Year, e.g., 2024]",
+      "description": "Completed foundational academics with focus on Science and Mathematics.",
+      "current": false
+    }
+  ]
+}
+

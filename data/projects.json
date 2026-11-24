@@ -1,0 +1,47 @@
+[
+  {
+    "id": "proj-1",
+    "title": "[Project Title 1: Python CLI Tool / Automation]",
+    "description": "[Placeholder: A Python script/automation utility demonstrating modular programming, input validation, and clean algorithmic execution.]",
+    "tags": ["Python"],
+    "category": "Python",
+    "github": "YOUR_GITHUB_URL",
+    "live": "",
+    "featured": true,
+    "icon": "terminal"
+  },
+  {
+    "id": "proj-2",
+    "title": "[Project Title 2: Responsive Web Project]",
+    "description": "[Placeholder: An interactive, accessible website project crafted with semantic HTML5, modern CSS layouts, and vanilla JavaScript.]",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "category": "Web",
+    "github": "YOUR_GITHUB_URL",
+    "live": "",
+    "featured": true,
+    "icon": "globe"
+  },
+  {
+    "id": "proj-3",
+    "title": "[Project Title 3: Unity Game Prototype]",
+    "description": "[Placeholder: A 2D/3D game mechanics prototype built in Unity exploring player controllers, collision handling, and game state loops.]",
+    "tags": ["Unity", "C#"],
+    "category": "Unity",
+    "github": "YOUR_GITHUB_URL",
+    "live": "",
+    "featured": true,
+    "icon": "gamepad"
+  },
+  {
+    "id": "proj-4",
+    "title": "[Project Title 4: C/C++ Data Structures]",
+    "description": "[Placeholder: Implementation of fundamental data structures and algorithms in C/C++ emphasizing memory efficiency and algorithmic complexity.]",
+    "tags": ["C", "C++"],
+    "category": "C/C++",
+    "github": "YOUR_GITHUB_URL",
+    "live": "",
+    "featured": false,
+    "icon": "cpu"
+  }
+]
+

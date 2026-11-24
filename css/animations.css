@@ -1,0 +1,249 @@
+/* ==========================================================================
+   ANIMATIONS.CSS — Kapish Rawat Portfolio
+   Keyframe Animations, Preloader, Custom Cursor, and Motion Fallbacks
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Preloader Animation
+   -------------------------------------------------------------------------- */
+.preloader {
+  position: fixed;
+  inset: 0;
+  background-color: #0a0b14;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.preloader__logo {
+  position: relative;
+  width: 90px;
+  height: 90px;
+}
+
+.preloader__svg {
+  transform: rotate(-90deg);
+}
+
+.preloader__ring-bg {
+  fill: none;
+  stroke: rgba(124, 92, 255, 0.15);
+  stroke-width: 4;
+}
+
+.preloader__ring-progress {
+  fill: none;
+  stroke: url(#krGradPreloader, #00e5ff);
+  stroke: #00e5ff;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-dasharray: 276.46; /* 2 * PI * 44 */
+  stroke-dashoffset: 276.46;
+  animation: preloaderStroke 1.6s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.preloader__initials {
+  transform: rotate(90deg);
+  transform-origin: 50px 50px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  fill: #e8eaf6;
+  text-anchor: middle;
+  dominant-baseline: central;
+  letter-spacing: 1px;
+}
+
+.preloader__text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #8a8fb0;
+  animation: pulseOpacity 1.2s infinite ease-in-out;
+}
+
+@keyframes preloaderStroke {
+  0% {
+    stroke-dashoffset: 276.46;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pulseOpacity {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   2. Custom Glowing Cursor (Desktop Only)
+   -------------------------------------------------------------------------- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease-out, height 0.25s ease-out, border-color 0.25s ease-out, background-color 0.25s ease-out;
+  box-shadow: 0 0 15px var(--accent-glow);
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.custom-cursor.hovered {
+  width: 55px;
+  height: 55px;
+  border-color: var(--primary);
+  background-color: rgba(124, 92, 255, 0.1);
+  box-shadow: 0 0 25px var(--primary-glow);
+}
+
+/* --------------------------------------------------------------------------
+   3. Scroll Progress Bar
+   -------------------------------------------------------------------------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--primary) 50%, var(--pink-accent) 100%);
+  z-index: 99990;
+  transition: width 0.08s linear;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* --------------------------------------------------------------------------
+   4. Keyframe Animations
+   -------------------------------------------------------------------------- */
+@keyframes mouseWheel {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--accent-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--accent-glow), 0 0 10px var(--primary-glow);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Floating animation helper class */
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   5. Accessibility: Reduced Motion (WCAG 2.1 AA)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+
+  .preloader {
+    display: none !important;
+  }
+
+  .tilt-card {
+    transform: none !important;
+  }
+
+  .skill-item__bar-fill {
+    transition: none !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Touch device cursor hiding */
+@media (hover: none) and (pointer: coarse) {
+  .custom-cursor,
+  .custom-cursor-dot {
+    display: none !important;
+  }
+}
+
