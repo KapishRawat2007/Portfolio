@@ -40,20 +40,9 @@ As you build more repositories during your BCA journey, update `data/projects.js
 
 ---
 
-## ✉️ 3. Optional: Flask Email Delivery (`.env`)
+## ✉️ 3. Contact Form (Web3Forms Direct Delivery)
 
-If you host with Flask and want form submissions sent to your inbox:
-1. Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-2. Enter your Gmail App Password:
-   ```env
-   MAIL_SERVER=smtp.gmail.com
-   MAIL_PORT=587
-   MAIL_USE_TLS=True
-   MAIL_USERNAME=your_gmail_address@gmail.com
-   MAIL_PASSWORD=your_gmail_app_password
-   MAIL_RECEIVER=rawatkapish942@gmail.com
-   ```
-*(Note: If hosted statically on GitHub Pages, the form automatically opens the visitor's mail client with `mailto:rawatkapish942@gmail.com` pre-filled. No setup required!)*
+The contact form is already configured with your Web3Forms access key (`c3d4c5b9-85fc-481c-852f-45e9617a4498`) in `js/contact.js`.
+- It sends messages directly to `rawatkapish942@gmail.com` without opening any email app and requires no backend server.
+- If you ever generate a new Web3Forms access key, simply update `WEB3FORMS_ACCESS_KEY` at the top of `js/contact.js`.
+- The optional Flask backend in `app.py` remains available if you ever choose to run a custom Python server.
