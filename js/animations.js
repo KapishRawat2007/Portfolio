@@ -25,16 +25,16 @@ function dismissPreloader() {
     preloader.classList.add('fade-out');
     setTimeout(() => {
       preloader.style.display = 'none';
-    }, 650);
+    }, 400);
   };
 
-  // Dismiss either when page loads completely or maximum 1.5s timeout
+  // Dismiss quickly once page is ready to optimize FCP and avoid blocking
   if (document.readyState === 'complete') {
-    setTimeout(hidePreloader, 400);
+    setTimeout(hidePreloader, 100);
   } else {
-    window.addEventListener('load', () => setTimeout(hidePreloader, 400));
-    // Hard fallback safety timer under 2 seconds per PRD
-    setTimeout(hidePreloader, 1500);
+    window.addEventListener('load', () => setTimeout(hidePreloader, 100));
+    // Hard fallback safety timer under 1.2 seconds
+    setTimeout(hidePreloader, 800);
   }
 }
 

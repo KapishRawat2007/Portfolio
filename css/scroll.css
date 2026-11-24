@@ -1,0 +1,503 @@
+/* ==========================================================================
+   SCROLL.CSS — Kapish Rawat Portfolio (v1.1 Scroll Upgrade)
+   Cinematic scroll animation styles, Lenis integration, pinning,
+   clip-paths, SVG drawing, marquee, stacking cards, and curtain footer.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Lenis Smooth Scroll Foundation
+   -------------------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Split-Text Mask Reveals (S3)
+   -------------------------------------------------------------------------- */
+.split-char,
+.split-word,
+.split-line {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.split-line {
+  display: block;
+}
+
+.split-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+/* --------------------------------------------------------------------------
+   3. Scrubbed Text Highlight (S4)
+   -------------------------------------------------------------------------- */
+.scrub-text {
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.scrub-word {
+  display: inline-block;
+  opacity: 0.22;
+  transition: opacity 0.15s ease-out, color 0.15s ease-out;
+  margin-right: 0.3em;
+  will-change: opacity;
+}
+
+.scrub-word.active {
+  opacity: 1;
+  color: #ffffff;
+}
+
+[data-theme="light"] .scrub-word.active {
+  color: #0b0f24;
+}
+
+/* --------------------------------------------------------------------------
+   4. Multi-Layer Parallax Elements (S5)
+   -------------------------------------------------------------------------- */
+.parallax-layer {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.parallax-blob {
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.35;
+}
+
+.parallax-blob--cyan {
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+}
+
+.parallax-blob--purple {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+}
+
+.parallax-shape {
+  position: absolute;
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-md);
+  background: rgba(124, 92, 255, 0.05);
+  backdrop-filter: blur(4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------------
+   5. Pinned Horizontal-Scroll Gallery for Projects (S6)
+   -------------------------------------------------------------------------- */
+.projects-pinned-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .projects-pinned-section {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .projects-horizontal-track {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2.5rem;
+    width: max-content;
+    padding-left: calc((100vw - min(var(--container-max-width), 90vw)) / 2);
+    padding-right: 15vw;
+    will-change: transform;
+  }
+
+  .projects-horizontal-track .project-card {
+    width: 420px;
+    min-width: 420px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  .projects-horizontal-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100% !important;
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Stacking Cards for Community & Education (S7)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  .cards-stack-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .stack-card {
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+    will-change: transform, opacity;
+    transform-origin: center top;
+  }
+}
+
+@media (max-width: 1023px) {
+  .cards-stack-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stack-card {
+    position: static !important;
+    transform: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. SVG Line-Drawing Timeline for Education (S8)
+   -------------------------------------------------------------------------- */
+.edu-timeline-svg-wrapper {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.edu-timeline-svg {
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 4px;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.edu-svg-line-bg {
+  stroke: rgba(124, 92, 255, 0.18);
+  stroke-width: 3;
+}
+
+.edu-svg-line-progress {
+  stroke: url(#eduLineGrad);
+  stroke-width: 4;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 6px var(--accent));
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  will-change: stroke-dashoffset;
+}
+
+/* Node indicator dot */
+.edu-node-dot {
+  transform: scale(0.6);
+  opacity: 0.4;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, filter 0.4s ease;
+  will-change: transform, opacity;
+}
+
+.edu-node-dot.active {
+  transform: scale(1.15);
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+/* --------------------------------------------------------------------------
+   8. Clip-Path Image Reveal (S9)
+   -------------------------------------------------------------------------- */
+.clip-reveal {
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path;
+}
+
+.clip-reveal-corner {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  will-change: clip-path;
+}
+
+/* --------------------------------------------------------------------------
+   9. Velocity-Reactive Skills Marquee (S10)
+   -------------------------------------------------------------------------- */
+.skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 2rem 0;
+  margin: 3rem 0 1.5rem;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.skills-marquee__track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+.skills-marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-pill);
+  font-family: var(--font-code);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: border-color var(--transition-fast), color var(--transition-fast);
+}
+
+.skills-marquee__item i {
+  color: var(--accent);
+  font-size: 1.15rem;
+}
+
+.skills-marquee__item:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --------------------------------------------------------------------------
+   10. Velocity Skew (S11)
+   -------------------------------------------------------------------------- */
+.velocity-skew {
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* --------------------------------------------------------------------------
+   11. Section Theme Shift (S12)
+   -------------------------------------------------------------------------- */
+body {
+  transition: background-color 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              background-image 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body[data-section="home"] {
+  --section-hue: 0deg;
+}
+
+body[data-section="about"] {
+  --section-hue: 15deg;
+}
+
+body[data-section="skills"] {
+  --section-hue: 35deg;
+}
+
+body[data-section="projects"] {
+  --section-hue: 55deg;
+}
+
+body[data-section="community"] {
+  --section-hue: 40deg;
+}
+
+body[data-section="education"] {
+  --section-hue: 20deg;
+}
+
+body[data-section="contact"] {
+  --section-hue: 0deg;
+}
+
+/* --------------------------------------------------------------------------
+   12. Circular Scroll-Progress Ring (S14)
+   -------------------------------------------------------------------------- */
+.scroll-progress-ring {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px var(--primary-glow);
+  border: 1px solid var(--surface-border);
+  z-index: 995;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.scroll-progress-ring.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-progress-ring:hover {
+  transform: translateY(-4px) scale(1.05);
+  border-color: var(--accent);
+  box-shadow: 0 14px 35px var(--accent-glow);
+}
+
+.scroll-progress-ring__svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.scroll-progress-ring__bg {
+  fill: none;
+  stroke: rgba(124, 92, 255, 0.2);
+  stroke-width: 3.5;
+}
+
+.scroll-progress-ring__circle {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-dasharray: 150.8; /* 2 * PI * 24 */
+  stroke-dashoffset: 150.8;
+  transition: stroke-dashoffset 0.08s linear;
+}
+
+.scroll-progress-ring__icon {
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: transform 0.25s ease, color 0.25s ease;
+  z-index: 2;
+}
+
+.scroll-progress-ring:hover .scroll-progress-ring__icon {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   13. Sliding Nav Indicator Pill (S15)
+   -------------------------------------------------------------------------- */
+.navbar__menu {
+  position: relative;
+}
+
+.navbar__active-indicator {
+  position: absolute;
+  bottom: 4px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: var(--border-radius-pill);
+  box-shadow: 0 0 8px var(--accent-glow);
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+  will-change: transform, width;
+}
+
+/* --------------------------------------------------------------------------
+   14. Footer Curtain Reveal (S16)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  #main-content {
+    position: relative;
+    z-index: 2;
+    background-color: var(--bg);
+    background-image: var(--bg-gradient);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  }
+
+  .footer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    will-change: transform;
+  }
+}
+
+@media (max-width: 1023px) {
+  .footer {
+    position: static !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   15. Accessibility: Reduced Motion (WCAG 2.1 AA)
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .projects-horizontal-track {
+    transform: none !important;
+  }
+
+  .stack-card {
+    position: static !important;
+    transform: none !important;
+  }
+
+  .skills-marquee__track {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .velocity-skew {
+    transform: none !important;
+  }
+
+  .clip-reveal {
+    clip-path: none !important;
+  }
+
+  .scrub-word {
+    opacity: 1 !important;
+  }
+
+  .parallax-layer {
+    display: none !important;
+  }
+
+  .footer {
+    position: static !important;
+  }
+}
+
