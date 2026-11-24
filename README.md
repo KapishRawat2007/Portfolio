@@ -104,10 +104,22 @@ MAIL_RECEIVER=rawatkapish942@gmail.com
 2. Replace `assets/resume.pdf` with your real resume.
 3. Tweak colors in the `:root` block of `css/style.css` if desired.
 
+## ✉️ Contact Form (Web3Forms Direct Delivery)
+
+The contact form sends messages directly to your email via **[Web3Forms](https://web3forms.com/)** (`https://api.web3forms.com/submit`) without opening any email client:
+- **100% Serverless:** Works on GitHub Pages, Vercel, Netlify, or any static host with zero backend setup.
+- **Spam Protected:** Uses a hidden honeypot field (`botcheck`) and a 30-second client-side submission cooldown.
+- **How to change your Access Key:**
+  Open `js/contact.js` and update the constant at the top of the file:
+  ```javascript
+  export const WEB3FORMS_ACCESS_KEY = 'YOUR_NEW_ACCESS_KEY_HERE';
+  ```
+  *(The optional Flask backend in `app.py` remains in the repository for local Python development or custom server deployments).*
+
 ## 🚢 Deployment
 
-- **GitHub Pages:** push the static files and enable Pages in repo settings. The form falls back to `mailto:`.
-- **Render / Railway / PythonAnywhere:** deploy the Flask app with `gunicorn app:app`.
+- **GitHub Pages:** Push static files to your repository and enable Pages in settings. The contact form sends directly via Web3Forms with no backend required!
+- **Render / Railway / PythonAnywhere:** If you prefer running the optional Flask backend, deploy with `gunicorn app:app`.
 
 ## 📊 Quality Targets
 

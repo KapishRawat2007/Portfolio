@@ -99,9 +99,12 @@ Skill levels must be honest (beginner / intermediate), shown as labels rather th
 - Vertical animated timeline: BCA (1st Year), Swami Rama Himalayan University, plus a placeholder for schooling.
 
 ### 6.9 Contact
-- Form fields: Name, Email, Message, with validation and a success/error toast.
-- Direct links: Email, GitHub, LinkedIn, Instagram, X/Twitter (all from `profile.json`).
-- Backend: `POST /api/contact` (Flask), with a `mailto:` fallback when no backend is available.
+- Form fields: Name, Email, Message, with inline validation and animated toast feedback.
+- Anti-spam: Hidden honeypot checkbox (`botcheck`) and 30-second client-side submission cooldown.
+- Delivery: Direct serverless POST to Web3Forms (`https://api.web3forms.com/submit`), no `mailto:` or email client opens on form submit.
+- How to change access key: Configure `WEB3FORMS_ACCESS_KEY` constant at top of `js/contact.js`.
+- Direct links: Email (`mailto:rawatkapish942@gmail.com` plain link in contact details), GitHub, LinkedIn, Instagram, X/Twitter.
+- Optional backend: `POST /api/contact` in `app.py` retained as an alternative local Python server endpoint.
 
 ### 6.10 Footer
 - Copyright, quick links, social icons, back-to-top button.

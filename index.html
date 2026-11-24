@@ -985,6 +985,9 @@ kapish = Developer()
           <div class="contact__form-wrapper glass-card" data-aos="fade-left" data-aos-delay="200">
             <h3 class="contact__form-title">Send a Message</h3>
             <form id="contact-form" class="contact-form" novalidate>
+              <!-- Anti-spam Honeypot Field (Hidden from humans) -->
+              <input type="checkbox" name="botcheck" id="botcheck" class="botcheck-field" style="display: none;" tabindex="-1" aria-hidden="true" autocomplete="off" />
+
               <!-- Name Input Field -->
               <div class="form-group">
                 <label for="name" class="form-label">
@@ -1021,6 +1024,9 @@ kapish = Developer()
                 <span class="form-error" id="message-error" role="alert"></span>
               </div>
 
+              <!-- Accessible Live Region for Screen Readers -->
+              <div id="form-status" class="form-status sr-only" role="status" aria-live="polite"></div>
+
               <!-- Submit Button with Magnetic Effect -->
               <button type="submit" id="contact-submit-btn" class="btn btn--primary btn--full magnetic-btn">
                 <span class="btn__text">Send Message</span>
@@ -1032,7 +1038,7 @@ kapish = Developer()
             <!-- Status Notice -->
             <div class="form-footer-note">
               <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
-              <span>Direct Flask API delivery with automatic <code>mailto:</code> fallback. Your data is never shared.</span>
+              <span>Direct serverless delivery powered by Web3Forms. Your email is never shared.</span>
             </div>
           </div>
         </div>
