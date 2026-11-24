@@ -66,7 +66,7 @@ Just open `index.html` in your browser, or use the VS Code **Live Server** exten
 ### Option 2: With Flask backend
 ```bash
 # 1. Clone
-git clone https://github.com/YOUR_USERNAME/portfolio.git
+git clone https://github.com/KapishRawat2007/portfolio.git
 cd portfolio
 
 # 2. Create a virtual environment
@@ -95,16 +95,14 @@ MAIL_SERVER=smtp.gmail.com
 MAIL_PORT=587
 MAIL_USERNAME=your_email@gmail.com
 MAIL_PASSWORD=your_app_password
-MAIL_RECEIVER=your_email@gmail.com
+MAIL_RECEIVER=rawatkapish942@gmail.com
 ```
 
 ## ✏️ Customize
 
-1. Edit `data/profile.json` with your real name, email, and social links.
-2. Edit `data/projects.json` to add your projects.
-3. Replace `assets/images/profile.webp` with your photo.
-4. Replace `assets/resume.pdf` with your resume.
-5. Tweak colors in the `:root` block of `css/style.css`.
+1. Edit `data/projects.json` to add your projects.
+2. Replace `assets/resume.pdf` with your real resume.
+3. Tweak colors in the `:root` block of `css/style.css` if desired.
 
 ## 🚢 Deployment
 
@@ -117,11 +115,11 @@ Lighthouse: Performance ≥ 90 · Accessibility ≥ 95 · Best Practices ≥ 95 
 
 ## 🤝 Connect With Me
 
-- GitHub: `YOUR_GITHUB_URL`
-- LinkedIn: `YOUR_LINKEDIN_URL`
-- Instagram: `YOUR_INSTAGRAM_URL`
-- X / Twitter: `YOUR_X_URL`
-- Email: `YOUR_EMAIL`
+- GitHub: [https://github.com/KapishRawat2007](https://github.com/KapishRawat2007)
+- LinkedIn: [https://www.linkedin.com/in/kapishrawat](https://www.linkedin.com/in/kapishrawat)
+- Instagram: [https://www.instagram.com/kapish_rawat_2007](https://www.instagram.com/kapish_rawat_2007)
+- X / Twitter: [https://x.com/kapishrawat2007](https://x.com/kapishrawat2007)
+- Email: [rawatkapish942@gmail.com](mailto:rawatkapish942@gmail.com)
 
 ## 📄 License
 

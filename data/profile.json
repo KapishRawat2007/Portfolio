@@ -1,17 +1,17 @@
 {
   "name": "Kapish Rawat",
   "title": "BCA 1st-Year Student",
-  "institution": "Swami Rama Himalayan University",
+  "institution": "Swami Rama Himalayan University, Jolly Grant",
   "tagline": "BCA student building things with code.",
-  "bio": "I am a first-year Bachelor of Computer Applications (BCA) student at Swami Rama Himalayan University with a deep curiosity for software development, game programming, and computer science fundamentals. Eager to explore new technologies, collaborate with passionate peers, and create clean, impactful digital experiences.",
-  "email": "YOUR_EMAIL",
+  "bio": "I am a first-year Bachelor of Computer Applications (BCA) student at Swami Rama Himalayan University, Jolly Grant, with a deep curiosity for software development, game programming, and computer science fundamentals. IEEE member and GitHub Club member eager to explore new technologies, collaborate with passionate peers, and build clean, impactful digital experiences.",
+  "email": "rawatkapish942@gmail.com",
   "resume": "assets/resume.pdf",
   "photo": "assets/images/profile.webp",
   "socials": {
-    "github": "YOUR_GITHUB_URL",
-    "linkedin": "YOUR_LINKEDIN_URL",
-    "instagram": "YOUR_INSTAGRAM_URL",
-    "twitter": "YOUR_X_URL"
+    "github": "https://github.com/KapishRawat2007",
+    "linkedin": "https://www.linkedin.com/in/kapishrawat",
+    "instagram": "https://www.instagram.com/kapish_rawat_2007",
+    "twitter": "https://x.com/kapishrawat2007"
   },
   "stats": {
     "languages": 5,
@@ -25,31 +25,55 @@
       "organization": "Swami Rama Himalayan University",
       "badge": "IEEE",
       "description": "Engaged with the global technical community, learning through workshops, technology seminars, and collaborative technical sessions.",
-      "link": ""
+      "link": "https://www.linkedin.com/in/kapishrawat"
     },
     {
       "role": "GitHub Club Member",
       "organization": "Swami Rama Himalayan University",
       "badge": "GitHub Club",
       "description": "Active participant in open-source exploration, version control best practices, and developer meetups at the university.",
-      "link": ""
+      "link": "https://github.com/KapishRawat2007"
+    }
+  ],
+  "milestones": [
+    {
+      "title": "IEEE Xtreme 20.0",
+      "team": "Explorer",
+      "globalRank": 426,
+      "allIndiaRank": 40,
+      "description": "Participated in the prestigious IEEE Xtreme 20.0 virtual programming competition with Team Explorer."
     }
   ],
   "education": [
     {
       "degree": "Bachelor of Computer Applications (BCA)",
-      "institution": "Swami Rama Himalayan University",
-      "year": "2024 - Present (1st Year)",
-      "description": "Focusing on programming paradigms, computer fundamentals, mathematics, and web technologies.",
+      "level": "1st Year",
+      "institution": "Swami Rama Himalayan University, Jolly Grant",
+      "year": "2026 - Present",
+      "score": "",
+      "badge": "Current",
+      "description": "Focusing on programming fundamentals, C, C++, Python, web development, and database systems.",
       "current": true
     },
     {
-      "degree": "Higher Secondary Education (12th Grade)",
-      "institution": "[Your School / College Name]",
-      "year": "[Passing Year, e.g., 2024]",
-      "description": "Completed foundational academics with focus on Science and Mathematics.",
+      "degree": "Class XII (Senior Secondary)",
+      "level": "Stream: PCM",
+      "institution": "Renaissance Dron School, Doiwala",
+      "year": "2025 - 26",
+      "score": "81%",
+      "badge": "81% · PCM",
+      "description": "Senior secondary schooling with Physics, Chemistry, and Mathematics (PCM).",
+      "current": false
+    },
+    {
+      "degree": "Class X (Secondary Education)",
+      "level": "High School",
+      "institution": "Renaissance Dron School, Doiwala",
+      "year": "2023 - 24",
+      "score": "91%",
+      "badge": "91%",
+      "description": "Secondary education with strong foundational academic scores.",
       "current": false
     }
   ]
 }
-

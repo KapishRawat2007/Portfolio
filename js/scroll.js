@@ -261,51 +261,50 @@ function initHeroScrollOut() {
 }
 
 // --------------------------------------------------------------------------
-// S3: Split-Text Heading Reveals (Masked Word Stagger)
+// S3: Split-Text Heading Reveals (Masked Word Stagger, Preserves Gradients)
 // --------------------------------------------------------------------------
 function initSplitTextHeadings() {
   const headingTitles = document.querySelectorAll('.section-header__title');
   if (headingTitles.length === 0) return;
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   headingTitles.forEach((heading) => {
-    // Avoid double-wrapping if already split
     if (heading.dataset.splitDone) return;
     heading.dataset.splitDone = 'true';
 
-    // Split text into spans wrapped with overflow:hidden container
-    const originalHTML = heading.innerHTML;
-    const words = heading.textContent.trim().split(/\s+/);
-
-    // If SplitType library is available on window, use it
-    if (typeof window.SplitType !== 'undefined') {
-      try {
-        const st = new window.SplitType(heading, { types: 'lines,words' });
-        window.gsap.from(st.words, {
-          y: '115%',
-          opacity: 0,
-          duration: SCROLL_CONFIG.headingDuration,
-          stagger: SCROLL_CONFIG.headingStagger,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: heading,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          }
-        });
-        return;
-      } catch (e) {
-        heading.innerHTML = originalHTML; // Fallback
-      }
+    if (prefersReducedMotion) {
+      heading.style.opacity = '1';
+      return;
     }
 
-    // Native lightweight splitter fallback
-    const wrappedWords = words
-      .map(
-        (w) =>
-          `<span class="split-word" style="overflow: hidden; display: inline-block; vertical-align: top;"><span class="split-inner" style="display: inline-block;">${w}</span></span>`
-      )
-      .join(' ');
-    heading.innerHTML = wrappedWords;
+    // Parse child nodes so gradient-text and HTML tags are preserved
+    let newHTML = '';
+    heading.childNodes.forEach((node) => {
+      if (node.nodeType === Node.TEXT_NODE) {
+        const words = node.textContent.split(/(\s+)/);
+        words.forEach((w) => {
+          if (/^\s+$/.test(w)) {
+            newHTML += ' ';
+          } else if (w.length > 0) {
+            newHTML += `<span class="split-word" style="overflow: hidden; display: inline-block; vertical-align: top;"><span class="split-inner" style="display: inline-block;">${w}</span></span>`;
+          }
+        });
+      } else if (node.nodeType === Node.ELEMENT_NODE) {
+        const isGradient = node.classList.contains('gradient-text');
+        const words = node.textContent.split(/(\s+)/);
+        words.forEach((w) => {
+          if (/^\s+$/.test(w)) {
+            newHTML += ' ';
+          } else if (w.length > 0) {
+            const gradClass = isGradient ? ' gradient-text' : '';
+            newHTML += `<span class="split-word" style="overflow: hidden; display: inline-block; vertical-align: top;"><span class="split-inner${gradClass}" style="display: inline-block;">${w}</span></span>`;
+          }
+        });
+      }
+    });
+
+    heading.innerHTML = newHTML;
 
     const innerSpans = heading.querySelectorAll('.split-inner');
     window.gsap.from(innerSpans, {
@@ -316,7 +315,7 @@ function initSplitTextHeadings() {
       ease: 'power3.out',
       scrollTrigger: {
         trigger: heading,
-        start: 'top 85%',
+        start: 'top 88%',
         toggleActions: 'play none none none'
       }
     });
@@ -324,30 +323,56 @@ function initSplitTextHeadings() {
 }
 
 // --------------------------------------------------------------------------
-// S4: Scrubbed Text Highlight on About Paragraph
+// S4: Scrubbed Text Highlight on About Paragraph (Preserves HTML Tags)
 // --------------------------------------------------------------------------
 function initAboutTextHighlight() {
   const bioPara = document.getElementById('about-bio');
   if (!bioPara || bioPara.dataset.scrubDone) return;
   bioPara.dataset.scrubDone = 'true';
 
-  const text = bioPara.textContent.trim();
-  const words = text.split(/\s+/);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    bioPara.style.opacity = '1';
+    return;
+  }
 
-  bioPara.innerHTML = words
-    .map((word) => `<span class="scrub-word">${word}</span>`)
-    .join(' ');
+  // Preserve child tags (like <strong>) while wrapping words
+  let newHTML = '';
+  bioPara.childNodes.forEach((node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const words = node.textContent.split(/(\s+)/);
+      words.forEach((w) => {
+        if (/^\s+$/.test(w)) {
+          newHTML += ' ';
+        } else if (w.length > 0) {
+          newHTML += `<span class="scrub-word">${w}</span>`;
+        }
+      });
+    } else if (node.nodeType === Node.ELEMENT_NODE) {
+      const tagName = node.tagName.toLowerCase();
+      const words = node.textContent.split(/(\s+)/);
+      newHTML += `<${tagName}>`;
+      words.forEach((w) => {
+        if (/^\s+$/.test(w)) {
+          newHTML += ' ';
+        } else if (w.length > 0) {
+          newHTML += `<span class="scrub-word">${w}</span>`;
+        }
+      });
+      newHTML += `</${tagName}>`;
+    }
+  });
 
+  bioPara.innerHTML = newHTML;
   const scrubWords = bioPara.querySelectorAll('.scrub-word');
 
   window.gsap.to(scrubWords, {
     opacity: 1,
-    color: '#ffffff',
     stagger: 0.03,
     ease: 'none',
     scrollTrigger: {
       trigger: bioPara,
-      start: 'top 78%',
+      start: 'top 80%',
       end: 'bottom 55%',
       scrub: 0.8
     }

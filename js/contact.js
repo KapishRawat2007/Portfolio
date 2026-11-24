@@ -6,6 +6,50 @@
 
 export function initContact() {
   const form = document.getElementById('contact-form');
+  const copyBtn = document.getElementById('copy-email-btn');
+
+  // Copy email button listener
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const email = 'rawatkapish942@gmail.com';
+      let copied = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          try {
+            await navigator.clipboard.writeText(email);
+            copied = true;
+          } catch (e) {
+            // fallback to execCommand below
+          }
+        }
+        if (!copied) {
+          const tempInput = document.createElement('textarea');
+          tempInput.value = email;
+          tempInput.style.position = 'fixed';
+          tempInput.style.opacity = '0';
+          document.body.appendChild(tempInput);
+          tempInput.focus();
+          tempInput.select();
+          document.execCommand('copy');
+          tempInput.remove();
+        }
+        showToast('Email address copied to clipboard!', 'success');
+        const copyText = copyBtn.querySelector('.copy-text');
+        if (copyText) {
+          const orig = copyText.textContent;
+          copyText.textContent = 'Copied!';
+          copyBtn.classList.add('copied');
+          setTimeout(() => {
+            copyText.textContent = orig;
+            copyBtn.classList.remove('copied');
+          }, 2000);
+        }
+      } catch (err) {
+        showToast('rawatkapish942@gmail.com', 'success');
+      }
+    });
+  }
+
   if (!form) return;
 
   const nameInput = document.getElementById('name');
@@ -156,8 +200,8 @@ function clearError(input, errorId) {
  * Mailto fallback generator
  */
 function triggerMailtoFallback({ name, email, message }) {
-  // Read recipient from profile or fallback
-  const recipient = 'kapishrawat.placeholder@example.com';
+  // Direct mailto to Kapish's real contact address
+  const recipient = 'rawatkapish942@gmail.com';
   const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
   const body = encodeURIComponent(
     `Hello Kapish,\n\n${message}\n\n---\nSender: ${name}\nEmail: ${email}`

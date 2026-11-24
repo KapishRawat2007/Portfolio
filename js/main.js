@@ -127,32 +127,26 @@ function bindSocialLink(platform, url) {
  * @param {Array} projects
  */
 function renderProjects(projects) {
-  const containers = [
-    document.getElementById('projects-track'),
-    document.getElementById('projects-grid')
-  ].filter(Boolean);
+  const container = document.getElementById('projects-track') || document.getElementById('projects-grid');
+  if (!container) return;
 
-  if (containers.length === 0) return;
+  container.innerHTML = ''; // Clear fallback or existing items
 
-  containers.forEach((container) => {
-    container.innerHTML = ''; // Clear fallback or existing items
-
-    projects.forEach((project) => {
-      const card = createProjectCardElement(project);
-      container.appendChild(card);
-    });
-
-    // Re-initialize tilt for new cards if VanillaTilt is loaded
-    if (typeof window.VanillaTilt !== 'undefined') {
-      const newTiltCards = container.querySelectorAll('.tilt-card');
-      window.VanillaTilt.init(newTiltCards, {
-        max: 8,
-        speed: 400,
-        glare: true,
-        'max-glare': 0.15
-      });
-    }
+  projects.forEach((project) => {
+    const card = createProjectCardElement(project);
+    container.appendChild(card);
   });
+
+  // Re-initialize tilt for new cards if VanillaTilt is loaded
+  if (typeof window.VanillaTilt !== 'undefined') {
+    const newTiltCards = container.querySelectorAll('.tilt-card');
+    window.VanillaTilt.init(newTiltCards, {
+      max: 8,
+      speed: 400,
+      glare: true,
+      'max-glare': 0.15
+    });
+  }
 
   // Refresh ScrollTrigger calculations after DOM updates
   if (typeof window.ScrollTrigger !== 'undefined') {
@@ -232,8 +226,8 @@ function createProjectCardElement(project) {
  */
 function setupProjectFilters(projects) {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const grid = document.getElementById('projects-grid');
-  if (!grid || filterBtns.length === 0) return;
+  const track = document.getElementById('projects-track') || document.getElementById('projects-grid');
+  if (!track || filterBtns.length === 0) return;
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {

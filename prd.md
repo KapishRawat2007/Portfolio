@@ -145,13 +145,13 @@ All motion must respect `prefers-reduced-motion`.
 {
   "name": "Kapish Rawat",
   "tagline": "BCA student building things with code.",
-  "email": "YOUR_EMAIL",
+  "email": "rawatkapish942@gmail.com",
   "resume": "assets/resume.pdf",
   "socials": {
-    "github": "YOUR_GITHUB_URL",
-    "linkedin": "YOUR_LINKEDIN_URL",
-    "instagram": "YOUR_INSTAGRAM_URL",
-    "twitter": "YOUR_X_URL"
+    "github": "https://github.com/KapishRawat2007",
+    "linkedin": "https://www.linkedin.com/in/kapishrawat",
+    "instagram": "https://www.instagram.com/kapish_rawat_2007",
+    "twitter": "https://x.com/kapishrawat2007"
   }
 }
 ```
