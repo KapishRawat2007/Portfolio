@@ -54,79 +54,79 @@ async function initParticles() {
   if (typeof window.tsParticles === 'undefined') return;
 
   try {
-    // If using @tsparticles/slim, load the slim preset
-    if (typeof window.loadSlim === 'function') {
-      await window.loadSlim(window.tsParticles);
-    }
-
-    await window.tsParticles.load({
-      id: 'tsparticles',
-      options: {
-        background: {
-          color: {
-            value: 'transparent'
-          }
-        },
-        fpsLimit: 60,
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true,
-              mode: 'grab'
-            },
-            resize: true
+    const particleConfig = {
+      background: {
+        color: {
+          value: 'transparent'
+        }
+      },
+      fpsLimit: 60,
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: 'grab'
           },
-          modes: {
-            grab: {
-              distance: 140,
-              links: {
-                opacity: 0.5,
-                color: '#00e5ff'
-              }
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            links: {
+              opacity: 0.5,
+              color: '#00e5ff'
             }
           }
+        }
+      },
+      particles: {
+        color: {
+          value: ['#00e5ff', '#7c5cff', '#ff2a85']
         },
-        particles: {
-          color: {
-            value: ['#00e5ff', '#7c5cff', '#ff2a85']
-          },
-          links: {
-            color: '#7c5cff',
-            distance: 130,
-            enable: true,
-            opacity: 0.22,
-            width: 1
-          },
-          move: {
-            direction: 'none',
-            enable: true,
-            outModes: {
-              default: 'bounce'
-            },
-            random: false,
-            speed: 0.85,
-            straight: false
-          },
-          number: {
-            density: {
-              enable: true,
-              area: 900
-            },
-            value: 42
-          },
-          opacity: {
-            value: { min: 0.2, max: 0.7 }
-          },
-          shape: {
-            type: 'circle'
-          },
-          size: {
-            value: { min: 1.5, max: 3 }
-          }
+        links: {
+          color: '#7c5cff',
+          distance: 130,
+          enable: true,
+          opacity: 0.22,
+          width: 1
         },
-        detectRetina: true
+        move: {
+          direction: 'none',
+          enable: true,
+          outModes: {
+            default: 'bounce'
+          },
+          random: false,
+          speed: 0.85,
+          straight: false
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 900
+          },
+          value: 42
+        },
+        opacity: {
+          value: { min: 0.2, max: 0.7 }
+        },
+        shape: {
+          type: 'circle'
+        },
+        size: {
+          value: { min: 1.5, max: 3 }
+        }
+      },
+      detectRetina: true
+    };
+
+    if (typeof window.tsParticles.load === 'function') {
+      try {
+        await window.tsParticles.load('tsparticles', particleConfig);
+      } catch (err) {
+        await window.tsParticles.load({ id: 'tsparticles', options: particleConfig });
       }
-    });
+    }
   } catch (error) {
     console.warn('Particles initialization skipped or unsupported in this environment:', error);
   }

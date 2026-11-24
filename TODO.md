@@ -1,98 +1,59 @@
 # 📋 Kapish Rawat — Portfolio Action Checklist (TODO.md)
 
-This document tracks all the placeholders in your portfolio that you should replace with your real information, links, and assets as you progress through your BCA journey.
+This document tracks the few remaining items in your portfolio that you can update whenever you're ready: your real resume and your coursework projects.
 
 ---
 
-## 👤 1. Profile Information (`data/profile.json`)
+## ✅ Completed & Verified in This Release
 
-- [ ] **Email Address**: Replace `"YOUR_EMAIL"` with your real contact email (e.g., `"kapish@example.com"`).
-- [ ] **GitHub Profile**: Replace `"YOUR_GITHUB_URL"` with your actual GitHub profile link (e.g., `"https://github.com/kapishrawat"`).
-- [ ] **LinkedIn Profile**: Replace `"YOUR_LINKEDIN_URL"` with your LinkedIn profile link.
-- [ ] **Instagram Profile**: Replace `"YOUR_INSTAGRAM_URL"` with your Instagram handle or profile URL (or leave empty if you prefer not to display it).
-- [ ] **X / Twitter Profile**: Replace `"YOUR_X_URL"` with your X/Twitter profile link (or leave empty).
-- [ ] **High School Details**: In the `education` array, replace `"[Your School / College Name]"` and `"[Passing Year, e.g., 2024]"` with your actual 12th-grade institution and year.
-
-> **Note:** If any social link remains as `"YOUR_..."` or empty, the website automatically disables the icon and shows a friendly *"Coming soon"* tooltip.
+- [x] **Profile Photograph**: `assets/images/profile.webp` and `assets/images/profile.jpg` generated with 4:5 portrait crop focused on face/upper body, soft-blob rounded corners, glowing gradient border, dark gradient edge overlay, and `og:image` (1200x630).
+- [x] **Contact Email**: Configured `rawatkapish942@gmail.com` across `profile.json`, contact section, mailto fallback, copy-to-clipboard button with toast feedback, and schema.
+- [x] **Social Profiles**: Linked Instagram, GitHub, LinkedIn, and X with secure `target="_blank" rel="noopener noreferrer"` attributes.
+- [x] **Education Timeline**: Updated with 3 milestones:
+  - Swami Rama Himalayan University, Jolly Grant (2026 - Present | BCA 1st Year)
+  - Renaissance Dron School, Doiwala (2025 - 26 | Class XII | Stream: PCM | 81%)
+  - Renaissance Dron School, Doiwala (2023 - 24 | Class X | 91%)
+- [x] **Highlighted Milestone**: Added IEEE Xtreme 20.0 featured achievement card (Team Explorer, All India Rank 40, Global Rank 426) with animated counters.
 
 ---
 
-## 🖼️ 2. Images & Assets (`assets/`)
+## 📌 Items for You to Replace When Ready
 
-- [ ] **Profile Photograph**:
-  - Replace `assets/images/profile.webp` with your real photo.
-  - Recommended dimensions: **400 × 400 pixels** (square ratio).
-  - Format: WebP or PNG. If you use a `.jpg` or `.png`, update the filename in `data/profile.json`.
-- [ ] **Resume PDF**:
-  - Replace `assets/resume.pdf` with your real, updated resume or CV.
+### 📄 1. Resume PDF (`assets/`)
+- [ ] **Resume / CV**:
+  - Replace `assets/resume.pdf` with your real resume PDF.
   - The "Download Resume" button in the Hero section is already configured to download this file.
 
 ---
 
-## 💻 3. Real Projects (`data/projects.json`)
+### 💻 2. Real Coursework & Personal Projects (`data/projects.json`)
+As you build more repositories during your BCA journey, update `data/projects.json` with your real GitHub links:
 
-Replace the placeholder projects with your actual repositories as you create them:
-
-- [ ] **Project 1 (Python)**:
-  - Title, description, and your GitHub repo link.
+- [ ] **Project 1 (Python / Automation)**:
+  - Update title, description, and link to your GitHub repository.
 - [ ] **Project 2 (Web Development)**:
-  - Title, description, GitHub repo link, and live URL (e.g., GitHub Pages or Vercel preview).
+  - Update title, description, GitHub repo, and live demo link.
 - [ ] **Project 3 (Unity Game Prototype)**:
-  - Title, gameplay summary, GitHub repo or itch.io play link.
-- [ ] **Project 4 (C / C++ Programs)**:
-  - Title, description of algorithms or data structures, and repo link.
+  - Update title, description, gameplay mechanics, and repo / itch.io link.
+- [ ] **Project 4 (C / C++ Algorithms & Data Structures)**:
+  - Update title, description, and repo link.
 
 ---
 
-## 🏆 4. Community & Achievements (`index.html`)
+## ✉️ 3. Optional: Flask Email Delivery (`.env`)
 
-- [ ] **Timeline & Milestones**:
-  - Under the **Community & Involvement** section (`#community`), update the placeholder milestone `[First Campus Hackathon & Technical Workshop]` whenever you attend an IEEE event, GitHub Club meetup, or hackathon.
-
----
-
-## ✉️ 5. Contact Form & Email Setup (`.env`)
-
-The contact form works in two modes:
-
-### Mode A: Automatic Fallback (No Server Needed / GitHub Pages)
-- If hosted statically on GitHub Pages, the form automatically opens the visitor's email client (`mailto:`) with the message pre-filled. No setup required!
-
-### Mode B: Flask Server with SMTP Email Delivery
+If you host with Flask and want form submissions sent to your inbox:
 1. Copy `.env.example` to `.env`:
    ```bash
    cp .env.example .env
    ```
-2. Open `.env` and fill in your Gmail App Password credentials:
+2. Enter your Gmail App Password:
    ```env
    MAIL_SERVER=smtp.gmail.com
    MAIL_PORT=587
    MAIL_USE_TLS=True
-   MAIL_USERNAME=your_real_email@gmail.com
+   MAIL_USERNAME=your_gmail_address@gmail.com
    MAIL_PASSWORD=your_gmail_app_password
-   MAIL_RECEIVER=your_real_email@gmail.com
+   MAIL_RECEIVER=rawatkapish942@gmail.com
    ```
-3. Test locally with:
-   ```bash
-   python app.py
-   ```
-   Submit the form to verify receipt.
-
----
-
-## 🚀 6. Publishing / Deployment
-
-- [ ] **GitHub Pages (Static)**:
-  1. Initialize git in this folder: `git init`
-  2. Commit files: `git add . && git commit -m "Initial portfolio commit"`
-  3. Create a GitHub repo named `portfolio` (or `YOUR_USERNAME.github.io`).
-  4. Push your code:
-     ```bash
-     git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-     git branch -M main
-     git push -u origin main
-     ```
-  5. Go to repository **Settings > Pages > Deploy from a branch (main / root)**.
-- [ ] **Python Host (Render / Railway / PythonAnywhere)**:
-  - Use `gunicorn app:app` for production WSGI server.
-
+*(Note: If hosted statically on GitHub Pages, the form automatically opens the visitor's mail client with `mailto:rawatkapish942@gmail.com` pre-filled. No setup required!)*

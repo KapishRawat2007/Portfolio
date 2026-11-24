@@ -9,6 +9,7 @@ import { initNav } from './nav.js';
 import { initHero } from './hero.js';
 import { initAnimations } from './animations.js';
 import { initContact } from './contact.js';
+import { initScroll } from './scroll.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   // 1. Initialize core visual & interaction modules
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   initHero();
   initAnimations();
   initContact();
+  initScroll(); // v1.1 Scroll Animation System (Lenis + ScrollTrigger)
 
   // Update footer year dynamically
   const yearEl = document.getElementById('current-year');
@@ -125,25 +127,32 @@ function bindSocialLink(platform, url) {
  * @param {Array} projects
  */
 function renderProjects(projects) {
-  const grid = document.getElementById('projects-grid');
-  if (!grid) return;
+  const container = document.getElementById('projects-track') || document.getElementById('projects-grid');
+  if (!container) return;
 
-  grid.innerHTML = ''; // Clear fallback or existing items
+  container.innerHTML = ''; // Clear fallback or existing items
 
   projects.forEach((project) => {
     const card = createProjectCardElement(project);
-    grid.appendChild(card);
+    container.appendChild(card);
   });
 
   // Re-initialize tilt for new cards if VanillaTilt is loaded
   if (typeof window.VanillaTilt !== 'undefined') {
-    const newTiltCards = grid.querySelectorAll('.tilt-card');
+    const newTiltCards = container.querySelectorAll('.tilt-card');
     window.VanillaTilt.init(newTiltCards, {
       max: 8,
       speed: 400,
       glare: true,
       'max-glare': 0.15
     });
+  }
+
+  // Refresh ScrollTrigger calculations after DOM updates
+  if (typeof window.ScrollTrigger !== 'undefined') {
+    setTimeout(() => {
+      window.ScrollTrigger.refresh();
+    }, 100);
   }
 }
 
@@ -154,7 +163,7 @@ function renderProjects(projects) {
  */
 function createProjectCardElement(project) {
   const card = document.createElement('div');
-  card.className = 'project-card glass-card tilt-card';
+  card.className = 'project-card glass-card tilt-card velocity-skew';
   card.setAttribute('data-category', project.category || 'All');
   card.setAttribute('data-aos', 'fade-up');
 
@@ -217,8 +226,8 @@ function createProjectCardElement(project) {
  */
 function setupProjectFilters(projects) {
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const grid = document.getElementById('projects-grid');
-  if (!grid || filterBtns.length === 0) return;
+  const track = document.getElementById('projects-track') || document.getElementById('projects-grid');
+  if (!track || filterBtns.length === 0) return;
 
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
